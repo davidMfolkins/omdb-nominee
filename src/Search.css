@@ -1,6 +1,5 @@
 .result-container {
   margin: 10px;
-  text-align: center;
   width: 300px;
 }
 
@@ -19,6 +18,5 @@ div {
 .test {
   display: flex;
   flex-wrap: wrap;
-  width: 1000px;
   justify-content: center;
 }
