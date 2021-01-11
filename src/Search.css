@@ -1,12 +1,7 @@
-.Search {
-  width: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
 .result-container {
   margin: 10px;
   text-align: center;
+  width: 300px;
 }
 
 .search-container {
@@ -19,4 +14,11 @@
 }
 div {
   word-wrap: break-word;
+}
+
+.test {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1000px;
+  justify-content: center;
 }
