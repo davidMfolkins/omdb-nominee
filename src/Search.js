@@ -8,13 +8,25 @@ function Search() {
   useEffect(() => {
     const URL = `https://omdbapi.com/?apikey=a086c7ae&t=${value}`;
     axios.get(URL).then(response => {
-      console.log(response.data)
-      setResults(response.data.title)
+      setResults([response.data])
     });
   }, [value])
-  
-  const result = results && results.map(movie => {
-    return <p>{movie.title}</p>
+
+
+  const result = results.map(movie => {
+    console.log(movie)
+    if (movie.Title) {
+      return (
+        <div>
+          <div>Title: {movie.Title}</div>
+          <div>Year Released: {movie.Released}</div>
+          <div>Runtime: {movie.Runtime}</div>
+        </div>
+      )
+    } else {
+      return <div></div>
+    }
+
   })
 
   return (
@@ -29,6 +41,7 @@ function Search() {
           onChange={event => setValue(event.target.value)}
         />
       </form>
+      
       <div>{result}</div>
     </div>
   );
