@@ -4,6 +4,7 @@ import Search from './Search'
 function App() {
   return (
     <div className="App">
+      <div>The Shoppies</div>
       <Search />
     </div>
   );
