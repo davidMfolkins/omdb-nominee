@@ -18,16 +18,13 @@ function Search() {
     if (movie.Title) {
       return (
         <div onClick={()=> console.log("hello")}>
-          <img src={movie.Poster} width="200" height="300"></img>
+          <img src={movie.Poster} alt={movie.Title} width="200" height="300"></img>
           <div>Title: {movie.Title}</div>
           <div>Year Released: {movie.Released}</div>
           <div>Runtime: {movie.Runtime}</div>
         </div>
       )
-    } else {
-      return <div></div>
-    }
-
+    } 
   })
 
   return (
