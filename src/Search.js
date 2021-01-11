@@ -6,11 +6,11 @@ import './Search.css'
 function Search() {
   const [value, setValue] = useState('');
   const [results, setResults] = useState([]);
-  const [nominee, setNominee] = useState([]);
+  const [nominee, setNominee] = useState(JSON.parse(localStorage.getItem('nomineeList')) || []);
 
-  // useEffect(() => {
-  //   localStorage.setItem('nomineeList', JSON.stringify(nominee));
-  // }, [nominee])
+  useEffect(() => {
+    localStorage.setItem('nomineeList', JSON.stringify(nominee));
+  }, [nominee])
 
   useEffect(() => {
     const URL = `https://omdbapi.com/?apikey=a086c7ae&s=${value}`;
@@ -32,10 +32,21 @@ function Search() {
       )
     }
   })
-  console.log(nominee)
+
+  const removeNominee = function(nom) {
+    console.log(nominee)
+    const newList = nominee.filter((item) => item.nom !== nom)
+    setNominee(newList)
+  }
+
   const nominees = nominee.map(nom => {
-    return <div>{nom}</div>
+    return <div>
+            {nom}
+            <button type="button" onClick={() => removeNominee()}>remove</button>
+        </div>
   })
+
+
 
   return (
     <div className="Search">
