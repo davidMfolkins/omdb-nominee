@@ -1,7 +1,16 @@
+
+
 function Search() {
   return (
-    <div className="Search">
-      Search
+    <div className="searchBarContainer">
+      <form onSubmit={event => event.preventDefault()}>
+        <input className="searchBar"
+          type="text"
+          name="search"
+          placeholder="Search for an movie..."
+          spellcheck="false"
+        />
+      </form>
     </div>
   );
 }
