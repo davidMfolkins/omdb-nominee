@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios';
 
+import './Search.css'
+
 function Search() {
   const [value, setValue] = useState("");
   const [results, setResults] = useState([]);
@@ -17,20 +19,21 @@ function Search() {
     console.log(movie)
     if (movie.Title) {
       return (
-        <div onClick={()=> console.log("hello")}>
-          <img src={movie.Poster} alt={movie.Title} width="200" height="300"></img>
+        <div className="result-container">
+          <img src={movie.Poster} alt={movie.Title} width="300" height="400"></img>
           <div>Title: {movie.Title}</div>
           <div>Year Released: {movie.Released}</div>
           <div>Runtime: {movie.Runtime}</div>
+          <button type="button" onClick={()=> console.log("hello")}>Nominate</button>
         </div>
       )
     } 
   })
 
   return (
-    <div className="searchBarContainer">
-      <form onSubmit={event => event.preventDefault()}>
-        <input className="searchBar"
+    <div className="Search">
+      <form className="search-container" onSubmit={event => event.preventDefault()}>
+        <input className="search-bar"
           type="text"
           name="search"
           placeholder="Search for an movie..."
@@ -40,7 +43,7 @@ function Search() {
           onChange={event => setValue(event.target.value)}
         />
       </form>
-      <div>{result}</div>
+      {result}
     </div>
   );
 }
