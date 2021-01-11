@@ -17,7 +17,8 @@ function Search() {
     console.log(movie)
     if (movie.Title) {
       return (
-        <div>
+        <div onClick={()=> console.log("hello")}>
+          <img src={movie.Poster} width="200" height="300"></img>
           <div>Title: {movie.Title}</div>
           <div>Year Released: {movie.Released}</div>
           <div>Runtime: {movie.Runtime}</div>
@@ -37,11 +38,11 @@ function Search() {
           name="search"
           placeholder="Search for an movie..."
           spellcheck="false"
+          autocomplete="off"
           value={value}
           onChange={event => setValue(event.target.value)}
         />
       </form>
-      
       <div>{result}</div>
     </div>
   );
