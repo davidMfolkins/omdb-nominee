@@ -14,6 +14,9 @@
   justify-content: center;
 }
 
+.search-bar {
+  font-size: 20px;
+}
 div {
   word-wrap: break-word;
 }

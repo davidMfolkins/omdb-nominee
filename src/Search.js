@@ -8,15 +8,16 @@ function Search() {
   const [results, setResults] = useState([]);
 
   useEffect(() => {
-    const URL = `https://omdbapi.com/?apikey=a086c7ae&t=${value}`;
+    const URL = `https://omdbapi.com/?apikey=a086c7ae&s=${value}`;
     axios.get(URL).then(response => {
-      setResults([response.data])
+      console.log("res", response.data.Search)
+      setResults([response.data.Search])
     });
   }, [value])
 
 
-  const result = results.map(movie => {
-    console.log(movie)
+  const result = results[0] && results[0].map(movie => {
+    console.log("movie", results[0])
     if (movie.Title) {
       return (
         <div className="result-container">
