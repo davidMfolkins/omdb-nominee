@@ -45,7 +45,7 @@ function Search() {
     </div>
   })
 
-  const noNominees = function () {
+  const nominneConditional = function () {
     if (nominee.length <= 0) {
       return <div className="nominees">Search to select Nominees!</div>
     } else if (nominee.length === 5) {
@@ -78,7 +78,7 @@ function Search() {
       <div className="result-container">
         {result}
       </div>
-      {noNominees()}
+      {nominneConditional()}
     </div>
   );
 }
