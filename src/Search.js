@@ -23,7 +23,7 @@ function Search() {
     console.log(movie)
     if (movie.Title) {
       return (
-        <div className="result-container">
+        <div className="result">
           <img src={movie.Poster} alt={movie.Title} width="300" height="400"></img>
           <div>Title: {movie.Title}</div>
           <div>Year Released: {movie.Year}</div>
@@ -42,7 +42,6 @@ function Search() {
   const nominees = nominee.map(nom => {
     return <div>
             {nom}
-            <button type="button" onClick={() => removeNominee()}>remove</button>
         </div>
   })
 
@@ -61,10 +60,11 @@ function Search() {
           onChange={event => setValue(event.target.value)}
         />
       </form>
-      <div className="test">
+      <div className="result-container">
         {result}
       </div>
       <div>Your Nominees: {nominees}</div>
+      <button type="button" onClick={() => removeNominee()}>Remove Nominations</button>
     </div>
   );
 }
