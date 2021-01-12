@@ -64,6 +64,9 @@ function Search() {
 
   return (
     <div className="Search">
+      <div className="nominee-container">
+        {nominneConditional()}
+      </div>
       <form className="search-container" onSubmit={event => event.preventDefault()}>
         <input className="search-bar"
           type="text"
@@ -78,7 +81,6 @@ function Search() {
       <div className="result-container">
         {result}
       </div>
-      {nominneConditional()}
     </div>
   );
 }

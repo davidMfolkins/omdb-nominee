@@ -1,3 +1,8 @@
+
+.Search {
+  width: 90%;
+}
+
 .result {
   margin: 10px;
   width: 300px;
@@ -23,4 +28,8 @@ div {
 
 .nominees {
   text-align: center;
+}
+.nominee-container {
+  display: flex;
+  justify-content: flex-end;
 }
