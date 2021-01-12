@@ -47,9 +47,15 @@ function Search() {
 
   const noNominees = function () {
     if (nominee.length <= 0) {
-      return <div>Search to select Nominees!</div>
+      return <div className="nominees">Search to select Nominees!</div>
+    } else if (nominee.length === 5) {
+      return <div className="nominees">
+        <div>Thank you for your Nominations!</div>
+        <div>Your Nominees: {nominees}</div>
+        <button type="button" onClick={() => removeNominee()}>Remove Nominations</button>
+      </div>
     } else {
-      return (<div>
+      return (<div className="nominees">
         <div>Your Nominees: {nominees}</div>
         <button type="button" onClick={() => removeNominee()}>Remove Nominations</button>
       </div>)
