@@ -33,7 +33,7 @@ function Search() {
     }
   })
 
-  const removeNominee = function(nom) {
+  const removeNominee = function (nom) {
     console.log(nominee)
     const newList = nominee.filter((item) => item.nom !== nom)
     setNominee(newList)
@@ -41,11 +41,20 @@ function Search() {
 
   const nominees = nominee.map(nom => {
     return <div>
-            {nom}
-        </div>
+      {nom}
+    </div>
   })
 
-
+  const noNominees = function () {
+    if (nominee.length <= 0) {
+      return <div>Search to select Nominees!</div>
+    } else {
+      return (<div>
+        <div>Your Nominees: {nominees}</div>
+        <button type="button" onClick={() => removeNominee()}>Remove Nominations</button>
+      </div>)
+    }
+  }
 
   return (
     <div className="Search">
@@ -63,8 +72,7 @@ function Search() {
       <div className="result-container">
         {result}
       </div>
-      <div>Your Nominees: {nominees}</div>
-      <button type="button" onClick={() => removeNominee()}>Remove Nominations</button>
+      {noNominees()}
     </div>
   );
 }
