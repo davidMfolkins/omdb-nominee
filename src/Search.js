@@ -6,6 +6,7 @@ import './Search.css'
 function Search() {
   const [value, setValue] = useState('');
   const [results, setResults] = useState([]);
+  const [buttonDisabled, setButtonDisabled] = useState(false);
   const [nominee, setNominee] = useState(JSON.parse(localStorage.getItem('nomineeList')) || []);
 
   useEffect(() => {
@@ -27,16 +28,25 @@ function Search() {
           <img src={movie.Poster} alt={movie.Title} width="300" height="400"></img>
           <div>Title: {movie.Title}</div>
           <div>Year Released: {movie.Year}</div>
-          <button type="button" onClick={() => setNominee([...nominee, movie.Title])}>Nominate</button>
+          <button
+            type="button"
+            onClick={() => {setNominee([...nominee, movie.Title]); disableButton();}}
+            disabled={buttonDisabled}
+            >Nominate</button>
         </div>
       )
     }
   })
 
+  const disableButton = function() {
+    setButtonDisabled(true)
+  } 
+
   const removeNominee = function (nom) {
     console.log(nominee)
     const newList = nominee.filter((item) => item.nom !== nom)
     setNominee(newList)
+    setButtonDisabled(false)
   }
 
   const nominees = nominee.map(nom => {
