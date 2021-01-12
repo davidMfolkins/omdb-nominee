@@ -26,10 +26,27 @@ div {
   justify-content: center;
 }
 
-.nominees {
-  text-align: center;
-}
 .nominee-container {
   display: flex;
   justify-content: flex-end;
+}
+
+.tooltip {
+  position: absolute;
+  right: 40px;
+  top: 20px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: white;
+  color: black;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }

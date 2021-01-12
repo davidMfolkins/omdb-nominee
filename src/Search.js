@@ -30,7 +30,7 @@ function Search() {
           <div>Year Released: {movie.Year}</div>
           <button
             type="button"
-            onClick={() => {setNominee([...nominee, movie.Title]); disableButton();}}
+            onClick={() => setNominee([...nominee, movie.Title])}
             disabled={buttonDisabled}
             >Nominate</button>
         </div>
@@ -38,9 +38,6 @@ function Search() {
     }
   })
 
-  const disableButton = function() {
-    setButtonDisabled(true)
-  } 
 
   const removeNominee = function (nom) {
     console.log(nominee)
@@ -50,24 +47,22 @@ function Search() {
   }
 
   const nominees = nominee.map(nom => {
-    return <div>
+    return <div className="tooltiptext">
       {nom}
+      <button type="button" onClick={() => removeNominee()}>Remove Nominations</button>
     </div>
   })
 
   const nominneConditional = function () {
     if (nominee.length <= 0) {
-      return <div className="nominees">Search to select Nominees!</div>
+      return <div className="tooltip">Search to select Nominees!</div>
     } else if (nominee.length === 5) {
-      return <div className="nominees">
-        <div>Thank you for your Nominations!</div>
-        <div>Your Nominees: {nominees}</div>
-        <button type="button" onClick={() => removeNominee()}>Remove Nominations</button>
+      return <div>
+        <div className="tooltip">Thank you for your Nominations! Your Nominees: {nominees}</div>
       </div>
     } else {
-      return (<div className="nominees">
-        <div>Your Nominees: {nominees}</div>
-        <button type="button" onClick={() => removeNominee()}>Remove Nominations</button>
+      return (<div>
+        <div className="tooltip">Your Nominees: {nominees}</div>
       </div>)
     }
   }
