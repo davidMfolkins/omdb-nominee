@@ -49,8 +49,8 @@ function Search() {
 
   const nominees = nominee.map(nom => {
     return <div className="tooltiptext">
-      {nom}
-      <button type="button" onClick={() => removeNominee()}>Remove Nominations</button>
+      <div className="nom-title">{nom}</div>
+      <button className="remove-nominee" type="button" onClick={() => removeNominee()}>Remove Nominations</button>
     </div>
   })
 
@@ -63,7 +63,7 @@ function Search() {
       </div>
     } else {
       return (<div>
-        <div className="tooltip">Your Nominees: {nominees}</div>
+        <div className="tooltip">Hover over to see your Nominees! {nominees}</div>
       </div>)
     }
   }
