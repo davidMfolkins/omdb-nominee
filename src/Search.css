@@ -19,11 +19,8 @@
 
 .search-bar {
   font-size: 20px;
-}
-div {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  width: 30%;
+  border-radius: 5px;
 }
 
 .result-container {
@@ -37,12 +34,6 @@ div {
   justify-content: flex-end;
 }
 
-.tooltip {
-  position: absolute;
-  right: 40px;
-  top: 20px;
-}
-
 .nominate-button {
   width: 100%;
   background-color: white;
@@ -52,8 +43,16 @@ div {
 
 .result-content {
   margin: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+.tooltip {
+  position: absolute;
+  right: 200px;
+  top: 30px;
+}
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 120px;
