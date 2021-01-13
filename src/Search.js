@@ -67,25 +67,37 @@ function Search() {
     }
   }
 
+  const nomineeFinish = function () {
+    if (nominee.length === 5) {
+      return <div>THANK YOU FOR VOTING</div>
+    } else {
+      return (
+        <div>
+          <form className="search-container" onSubmit={event => event.preventDefault()}>
+            <input className="search-bar"
+              type="text"
+              name="search"
+              placeholder="Search for an movie..."
+              spellcheck="false"
+              autocomplete="off"
+              value={value}
+              onChange={event => setValue(event.target.value)}
+            />
+          </form>
+          <div className="result-container">
+            {result}
+          </div>
+        </div>
+      )
+    }
+  }
+
   return (
     <div className="Search">
       <div className="nominee-container">
         {nominneConditional()}
       </div>
-      <form className="search-container" onSubmit={event => event.preventDefault()}>
-        <input className="search-bar"
-          type="text"
-          name="search"
-          placeholder="Search for an movie..."
-          spellcheck="false"
-          autocomplete="off"
-          value={value}
-          onChange={event => setValue(event.target.value)}
-        />
-      </form>
-      <div className="result-container">
-        {result}
-      </div>
+      {nomineeFinish()}
     </div>
   );
 }
