@@ -91,6 +91,16 @@
   color: red;
 }
 
+.thanks-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: red;
+  height: 100px;
+  font-size: 80px;
+}
+
 @media only screen and (max-width: 1600px) { 
   .tooltip {
     position: absolute;

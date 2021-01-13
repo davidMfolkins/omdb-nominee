@@ -6,8 +6,8 @@ function App() {
     <div className="App">
       <div className="app-title">The Shoppies!</div>
       <Search />
-      <div className="footer">
-        <div className="test">Made by David</div>
+      <div className="footer-container">
+        <div className="footer">Made by David</div>
         </div>
     </div>
   );
