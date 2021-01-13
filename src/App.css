@@ -8,8 +8,9 @@
 
 .app-title {
   font-size: 80px;
-  margin: 150px 10px 30px 10px;
+  margin: 100px 10px 30px 10px;
   color: white;
+  font-family: 'Titillium Web', sans-serif;
 }
 
 .footer-container {
