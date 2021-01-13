@@ -14,8 +14,9 @@ function Search() {
   }, [nominee])
 
   useEffect(() => {
-    const URL = `https://omdbapi.com/?apikey=a086c7ae&s=${value}`;
+    const URL = `https://omdbapi.com/?apikey=a086c7ae&s=${value}&type=movie`;
     axios.get(URL).then(response => {
+      console.log(response)
       setResults([response.data.Search])
     });
   }, [value])
@@ -38,8 +39,7 @@ function Search() {
     }
   })
 
-
-  const removeNominee = function (nom) {
+  const removeNominee = function(nom) {
     const newList = nominee.filter((item) => item !== nom)
     setNominee(newList)
     setButtonDisabled(false)
