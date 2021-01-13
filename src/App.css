@@ -23,5 +23,8 @@
   margin-top: auto;
   color: white;
 }
+a:link, a:visited {
+  color: white;
+}
 
 
