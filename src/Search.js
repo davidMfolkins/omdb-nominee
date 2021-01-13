@@ -63,7 +63,7 @@ function Search() {
       </div>
     } else {
       return (<div>
-        <div className="tooltip">Hover over to see your Nominees! {nominees}</div>
+        <div className="tooltip">Hover to see your Nominees! {nominees}</div>
       </div>)
     }
   }

@@ -64,6 +64,7 @@
   position: absolute;
   right: 200px;
   top: 30px;
+  width: 300px;
 }
 .tooltip .tooltiptext {
   display: flex;
@@ -78,4 +79,20 @@
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
+}
+
+@media only screen and (max-width: 1600px) { 
+  .tooltip {
+    position: absolute;
+    right: 50px;
+    top: 30px;
+  }
+}
+
+@media only screen and (max-width: 1200px) { 
+  .tooltip {
+    position: absolute;
+    right: 1px;
+    top: 30px;
+  }
 }
