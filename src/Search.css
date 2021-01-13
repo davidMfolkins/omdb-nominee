@@ -80,8 +80,9 @@
   border: 1px solid white;
   color: black;
   padding: 3px;
-  border-radius: 3px;
   width: 300px;
+  height: 50px;
+  align-items: center;
 }
 
 .tooltip:hover .tooltiptext {
