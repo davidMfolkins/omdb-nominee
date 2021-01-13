@@ -9,6 +9,9 @@
   border: 1px solid black;
 }
 
+.result:hover {
+  box-shadow: 3px 3px black;
+}
 .search-container {
   display: flex;
   justify-content: center;
