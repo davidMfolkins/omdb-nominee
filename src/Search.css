@@ -6,11 +6,11 @@
 .result {
   margin: 10px;
   width: 300px;
-  border: 1px solid black;
+  border: 1px solid white;
 }
 
 .result:hover {
-  box-shadow: 3px 3px black;
+  box-shadow: 5px 5px white;
 }
 .search-container {
   display: flex;
@@ -36,15 +36,20 @@
 
 .nominate-button {
   width: 100%;
-  background-color: white;
-  color: black;
-  border: 2px solid red;
+  background-color: #d62d2d;
+  color: white;
+  border: 2px solid #d62d2d;
+  height: 30px;
+}
+
+.nominate-button:focus {
+  background-color: green;
 }
 
 .remove-nominee {
   background-color: white;
   color: black;
-  border: 2px solid red;
+  border: 2px solid #d62d2d;
   margin-left: 3px;
 }
 
@@ -53,6 +58,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: white;
 }
 .nom-title {
   white-space: nowrap;
@@ -71,7 +77,7 @@
   justify-content: space-between;
   visibility: hidden;
   background-color: white;
-  border: 1px solid black;
+  border: 1px solid white;
   color: black;
   padding: 3px;
   border-radius: 3px;
@@ -88,7 +94,7 @@
 
 .fa-film {
   font-size: 75px;
-  color: red;
+  color: #d62d2d;
 }
 
 .thanks-container {
@@ -96,7 +102,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: red;
+  background-color: #d62d2d;
   height: 100px;
   font-size: 80px;
 }
