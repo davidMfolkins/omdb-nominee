@@ -6,6 +6,7 @@
 .result {
   margin: 10px;
   width: 300px;
+  border: 1px solid black;
 }
 
 .search-container {
@@ -17,7 +18,9 @@
   font-size: 20px;
 }
 div {
-  word-wrap: break-word;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .result-container {
@@ -35,6 +38,17 @@ div {
   position: absolute;
   right: 40px;
   top: 20px;
+}
+
+.nominate-button {
+  width: 100%;
+  background-color: white;
+  color: black;
+  border: 2px solid red;
+}
+
+.result-content {
+  margin: 3px;
 }
 
 .tooltip .tooltiptext {

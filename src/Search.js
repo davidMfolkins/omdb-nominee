@@ -26,9 +26,10 @@ function Search() {
       return (
         <div className="result">
           <img src={movie.Poster} alt={movie.Title} width="300" height="400"></img>
-          <div>Title: {movie.Title}</div>
-          <div>Year Released: {movie.Year}</div>
+          <div className="result-content">Title: {movie.Title}</div>
+          <div className="result-content">Year Released: {movie.Year}</div>
           <button
+            className="nominate-button"
             type="button"
             onClick={() => setNominee([...nominee, movie.Title])}
             disabled={buttonDisabled}
