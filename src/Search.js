@@ -54,15 +54,15 @@ function Search() {
 
   const nominneConditional = function () {
     if (nominee.length <= 0) {
-      return <div className="tooltip">Search to select Nominees!</div>
+      return null
     } else if (nominee.length === 5) {
       return <div>
-        <div className="tooltip">Thank you for your Nominations!{nominees}
+        <div className="tooltip"><i className="fa fa-film"></i>{nominees}
         </div>
       </div>
     } else {
       return (<div>
-        <div className="tooltip">Hover to see your Nominees! {nominees}</div>
+        <div className="tooltip"><i className="fa fa-film"></i>{nominees}</div>
       </div>)
     }
   }
