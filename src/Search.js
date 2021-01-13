@@ -21,7 +21,6 @@ function Search() {
   }, [value])
 
   const result = results[0] && results[0].map(movie => {
-    console.log(movie)
     if (movie.Title) {
       return (
         <div className="result">
@@ -33,7 +32,7 @@ function Search() {
             type="button"
             onClick={() => setNominee([...nominee, movie.Title])}
             disabled={buttonDisabled}
-            >Nominate</button>
+          >Nominate</button>
         </div>
       )
     }
@@ -41,8 +40,7 @@ function Search() {
 
 
   const removeNominee = function (nom) {
-    console.log(nominee)
-    const newList = nominee.filter((item) => item.nom !== nom)
+    const newList = nominee.filter((item) => item !== nom)
     setNominee(newList)
     setButtonDisabled(false)
   }
@@ -50,7 +48,7 @@ function Search() {
   const nominees = nominee.map(nom => {
     return <div className="tooltiptext">
       <div className="nom-title">{nom}</div>
-      <button className="remove-nominee" type="button" onClick={() => removeNominee()}>Remove Nominations</button>
+      <button className="remove-nominee" type="button" onClick={() => removeNominee(nom)}>Remove</button>
     </div>
   })
 
@@ -59,7 +57,8 @@ function Search() {
       return <div className="tooltip">Search to select Nominees!</div>
     } else if (nominee.length === 5) {
       return <div>
-        <div className="tooltip">Thank you for your Nominations! Your Nominees: {nominees}</div>
+        <div className="tooltip">Thank you for your Nominations!{nominees}
+        </div>
       </div>
     } else {
       return (<div>
