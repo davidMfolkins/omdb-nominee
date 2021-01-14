@@ -65,7 +65,6 @@ function Search() {
   const removeNominee = function (nom) {
     const newList = nominee.filter((item) => item !== nom)
     setNominee(newList)
-    setButtonDisabled(false)
   }
 
   const nomineeFinish = function () {
