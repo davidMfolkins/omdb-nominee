@@ -1,28 +1,31 @@
 # The Shoppies
 
-The Shoppies is a SPA where users can search for movies using the OMDB Api and select their nominees for best film!
+The Shoppies is a SPA where users can search for movies using the OMDB Api and select their nominees for best film! This webapp was built as front end challenege for Shopify Summer 2021 interships.
 
-### Desktop mode
-!["Screenshot of desktop mode"](https://github.com/davidMfolkins/tweeter/blob/master/public/docs/desktop-mode.png?raw=true)
+### P1
+![""]()
 
-### Mobile mode
-!["Screenshot of desktop mode"](https://github.com/davidMfolkins/tweeter/blob/master/public/docs/mobile-mode.png?raw=true)
+### P2
+![""]()
 
-### Sending a tweet
-!["Screenshot of desktop mode"](https://github.com/davidMfolkins/tweeter/blob/master/public/docs/new-tweet.png?raw=true)
+### P3
+![""]()
 
 
-## Getting Started
+## Live
 
-1. Install dependencies using the `npm install` command.
-2. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
-3. Go to <http://localhost:8080/> in your browser.
+This application can be view at https://omdb-nominee.herokuapp.com/
 
 ## Dependencies
 
 - Express
-- Node 5.10.x or above
+- React
+- Axios
 
 ## Functionality
 
-- Users can post a tweet
+- Search for any movie
+- Nominate a movie
+- Remove a movie from nomination list
+- After 5 votes user will no longer be able to vote
+- Users nominees are saved even after leaving the page
