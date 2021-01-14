@@ -16,13 +16,13 @@ function Search() {
   useEffect(() => {
     const URL = `https://omdbapi.com/?apikey=a086c7ae&s=${value}&type=movie`;
     axios.get(URL).then(response => {
-      console.log(response)
       setResults([response.data.Search])
     });
   }, [value])
 
   const result = results[0] && results[0].map(movie => {
     if (movie.Title) {
+      console.log(movie)
       return (
         <div className="result">
           <img src={movie.Poster} alt={movie.Title} width="300" height="400"></img>
@@ -31,7 +31,7 @@ function Search() {
           <button
             className="nominate-button"
             type="button"
-            onClick={() => setNominee([...nominee, movie.Title])}
+            onClick={() => setNominee([...nominee, [movie.Title, movie.Poster]])}
             disabled={buttonDisabled}
           >Nominate</button>
         </div>
@@ -47,7 +47,8 @@ function Search() {
 
   const nominees = nominee.map(nom => {
     return <div className="tooltiptext">
-      <div className="nom-title">{nom}</div>
+      <img src={nom[1]} alt={nom[0]} width="78" height="104"></img>
+      <div className="nom-title">{nom[0]}</div>
       <button className="remove-nominee" type="button" onClick={() => removeNominee(nom)}>Remove</button>
     </div>
   })
