@@ -79,7 +79,7 @@
 .tooltip {
   position: absolute;
   right: 300px;
-  top: 100px;
+  top: 125px;
   width: 300px;
 }
 .tooltip .tooltiptext {
@@ -121,7 +121,7 @@
 .arrow {
   position: absolute;
   right: 531px;
-  top: 150px;
+  top: 170px;
   color: yellow;
   font-size: 100px;
   opacity: 1;
@@ -140,25 +140,42 @@
   0%,100% { opacity: 0; }
   50% { opacity: 1; }
 }
-@media only screen and (max-width: 1600px) { 
+@media only screen and (max-width: 1800px) { 
   .tooltip {
     position: absolute;
     right: 100px;
+    top: 125px;
   }
 
   .arrow {
     position: absolute;
     right: 331px;
-    top: 150px;
+    top: 170px;
+  }
+}
+
+@media only screen and (max-width: 1400px) { 
+  .tooltip {
+    position: absolute;
+    right: 1px;
+    top: 125px;
+  }
+  .arrow {
+    position: absolute;
+    right: 232px;
+    top: 170px;
   }
 }
 
 @media only screen and (max-width: 1200px) { 
   .tooltip {
     position: absolute;
-    right: 1px;
-    top: 30px;
+    top: 125px;
+    left: 20px;
   }
-
-
+  .arrow {
+    position: absolute;
+    left: 25px;
+    top: 170px;
+  }
 }
