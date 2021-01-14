@@ -9,9 +9,6 @@ function Search() {
   const [buttonDisabled, setButtonDisabled] = useState(false);
   const [nominee, setNominee] = useState(JSON.parse(localStorage.getItem('nomineeList')) || []);
 
-  useEffect(() => {
-    localStorage.setItem('nomineeList', JSON.stringify(nominee));
-  }, [nominee])
 
   useEffect(() => {
     const URL = `https://omdbapi.com/?apikey=a086c7ae&s=${value}&type=movie`;
@@ -20,9 +17,12 @@ function Search() {
     });
   }, [value])
 
+  useEffect(() => {
+    localStorage.setItem('nomineeList', JSON.stringify(nominee));
+  }, [nominee])
+
   const result = results[0] && results[0].map(movie => {
     if (movie.Title) {
-      console.log(movie)
       return (
         <div className="result">
           <img src={movie.Poster} alt={movie.Title} width="300" height="400"></img>
@@ -32,18 +32,12 @@ function Search() {
             className="nominate-button"
             type="button"
             onClick={() => setNominee([...nominee, [movie.Title, movie.Poster]])}
-            disabled={buttonDisabled}
+            disabled={ nominee.find(n => n[0] === movie.Title)}
           >Nominate</button>
         </div>
       )
     }
   })
-
-  const removeNominee = function (nom) {
-    const newList = nominee.filter((item) => item !== nom)
-    setNominee(newList)
-    setButtonDisabled(false)
-  }
 
   const nominees = nominee.map(nom => {
     return <div className="tooltiptext">
@@ -68,11 +62,17 @@ function Search() {
     }
   }
 
+  const removeNominee = function (nom) {
+    const newList = nominee.filter((item) => item !== nom)
+    setNominee(newList)
+    setButtonDisabled(false)
+  }
+
   const nomineeFinish = function () {
     if (nominee.length === 5) {
       return <div className="thanks-container">
-              <div>THANK YOU FOR VOTING</div>
-             </div>
+        <div>THANK YOU FOR VOTING</div>
+      </div>
     } else {
       return (
         <div>

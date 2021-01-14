@@ -27,6 +27,15 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 30px;
+}
+
+.result-content {
+  margin: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: white;
 }
 
 .nominee-container {
@@ -42,8 +51,9 @@
   height: 30px;
 }
 
-.nominate-button:focus {
-  background-color: green;
+.nominate-button:disabled {
+  background-color: grey;
+  border: 2px solid grey;
 }
 
 .remove-nominee {
@@ -53,13 +63,6 @@
   margin-left: 3px;
 }
 
-.result-content {
-  margin: 3px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  color: white;
-}
 .nom-title {
   white-space: nowrap;
   overflow: hidden;
