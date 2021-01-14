@@ -58,6 +58,7 @@ function Search() {
     } else {
       return (<div>
         <div className="tooltip"><i className="fa fa-film"></i>{nominees}</div>
+        <div className="arrow"><i class="fas fa-sort-up"></i></div>
       </div>)
     }
   }

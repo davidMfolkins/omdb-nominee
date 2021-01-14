@@ -18,9 +18,16 @@
 }
 
 .search-bar {
-  font-size: 20px;
-  width: 30%;
-  border-radius: 5px;
+  font-size: 30px;
+  width: 50%;
+  background-color: unset;
+  border: unset;
+  border-bottom: 2px solid #d62d2d;
+  color: white;
+}
+
+.search-bar:focus {
+  outline: none;
 }
 
 .result-container {
@@ -72,7 +79,7 @@
 .tooltip {
   position: absolute;
   right: 300px;
-  top: 50px;
+  top: 100px;
   width: 300px;
 }
 .tooltip .tooltiptext {
@@ -111,11 +118,38 @@
   font-size: 80px;
 }
 
+.arrow {
+  position: absolute;
+  right: 531px;
+  top: 150px;
+  color: yellow;
+  font-size: 100px;
+  opacity: 1;
+  -webkit-animation: fadeinout 4s linear forwards;
+  animation: fadeinout 4s linear forwards;
+  animation-iteration-count: 3;
+  animation-duration: 0.5s;
+}
+
+@-webkit-keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
+}
 @media only screen and (max-width: 1600px) { 
   .tooltip {
     position: absolute;
     right: 100px;
-    top: 30px;
+  }
+
+  .arrow {
+    position: absolute;
+    right: 331px;
+    top: 150px;
   }
 }
 
@@ -125,4 +159,6 @@
     right: 1px;
     top: 30px;
   }
+
+
 }
