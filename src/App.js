@@ -1,5 +1,5 @@
 import './App.css';
-import Search from './Search'
+import Search from './Search';
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
       <div className="sub-title">Movie awards for entrepreneurs</div>
       <Search />
       <div className="footer-container">
-        <div className="footer">Made by <a href="https://github.com/davidMfolkins" target="_blank">David</a></div>
+        <div className="footer">Made by <a href="https://github.com/davidMfolkins" target="_blank" rel="noreferrer">David</a></div>
         </div>
     </div>
   );
