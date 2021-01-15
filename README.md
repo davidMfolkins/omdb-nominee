@@ -2,19 +2,17 @@
 
 The Shoppies is a SPA where users can search for movies using the OMDB Api and select their nominees for best film! This webapp was built as front end challenege for Shopify Summer 2021 interships.
 
-### P1
-![""]()
-
-### P2
-![""]()
-
-### P3
-![""]()
-
-
-## Live
-
 This application can be view at https://omdb-nominee.herokuapp.com/
+
+### Landing page
+!["landing"]()
+
+### Search, results and nominees
+!["search"]()
+
+### Banner
+!["banner"]()
+
 
 ## Dependencies
 
