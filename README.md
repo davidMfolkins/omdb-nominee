@@ -5,13 +5,13 @@ The Shoppies is a SPA where users can search for movies using the OMDB Api and s
 This application can be view at https://omdb-nominee.herokuapp.com/
 
 ### Landing page
-!["landing"]()
+!["landing"](https://github.com/davidMfolkins/omdb-nominee/blob/master/docs/landing.png?raw=true)
 
 ### Search, results and nominees
-!["search"]()
+!["search"](https://github.com/davidMfolkins/omdb-nominee/blob/master/docs/search.png?raw=true)
 
 ### Banner
-!["banner"]()
+!["banner"](https://github.com/davidMfolkins/omdb-nominee/blob/master/docs/thankyou.png?raw=true)
 
 
 ## Dependencies
